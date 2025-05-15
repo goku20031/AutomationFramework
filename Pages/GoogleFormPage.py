@@ -33,3 +33,6 @@ class GoogleFormPage(CommonFunction):
     def switch_account(self, email):
         self.click_element(By.XPATH, GoogleFormLocator.btnSwitchAccount)
 
+    def is_form_displayed(self, form_title):
+        pass
+
