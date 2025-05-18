@@ -14,7 +14,7 @@ class CommonFunction:
         self.wait_element(locator, element)
         element_to_click = self.driver.find_element(locator, element)
         ActionChains(self.driver).move_to_element(element_to_click).perform()
-        element_to_click.clck()
+        element_to_click.click()
 
     def type_element(self, locator, element, text):
         self.wait_element(locator, element)
@@ -31,3 +31,6 @@ class CommonFunction:
             wait.until(EC.visibility_of_element_located((locator, element)))
         except Exception as e:
             print(f"Web element not fount {e}")
+
+    def is_element_displayed(self, locator, element):
+        return False

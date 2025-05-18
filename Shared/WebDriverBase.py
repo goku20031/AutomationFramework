@@ -8,7 +8,6 @@ import sys
 
 class WebDriverBase:
 
-    @classmethod
     def get_chrome_driver(self):
         # Setup Chrome options
         options = webdriver.ChromeOptions()
@@ -31,7 +30,6 @@ class WebDriverBase:
             print(f"[ERROR] Failed to start Chrome: {e}")
             sys.exit(1)
 
-        return self.driver
 
     def open_url(self, url):
         if self.driver is None:
