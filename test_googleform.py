@@ -12,18 +12,18 @@ class GoogleFormTest(WebDriverBase):
         self.cf = CommonFunction()
         self.obj_googleForm = GoogleFormPage()
 
-    def enter_entries_in_google_form(self):
+    def enter_entries_in_google_form(self, date_list, no_of_entries= 3, skip_date_list= []):
         month = '05'
         year = '2025'
         try:
             self.get_chrome_driver()
             self.open_url(urls.googleForm)
 
-            for i in range(2):
-                for date in range(1,15):
+            for i in range(no_of_entries):
+                for date in date_list:
                     if date in (1,2,3):
                         date = f"0{date}"
-                    if date in (4,6,13):
+                    if date in skip_date_list:
                         continue
 
 
